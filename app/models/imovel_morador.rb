@@ -1,0 +1,2 @@
+class ImovelMorador < ApplicationRecord
+end

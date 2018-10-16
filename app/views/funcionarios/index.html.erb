@@ -1,0 +1,60 @@
+<div>
+    <%= link_to 'Novo Funcionario', new_funcionario_path, class:'btn btn-primary' %>
+</div>
+<div>
+
+  <table class="table">
+
+      <thead>
+          <th>
+            <td>
+              Nome
+            </td>
+            <td>
+              Matricula
+            </td>
+            <td>
+              Cargo
+            </td>
+
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+          </th>
+
+      </thead>
+
+      <tbody>
+
+        <% @funcionarios.each do |funcionario| %>
+
+        <tr>
+            <td>
+              <%= funcionario.nome%>
+            </td>
+            <td>
+              <%= funcionario.matricula%>
+            </td>
+            <td>
+              <%= funcionario.cargo%>
+            </td>
+
+            <td>
+              <%= link_to 'Editar', edit_funcionario_path(funcionario), class:'btn btn-warning' %>
+            </td>
+            <td>
+              <%= link_to 'Excluir', funcionario_path(funcionario), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
+            </td>
+        </tr>
+
+        <% end %>
+
+      </tbody>
+
+
+  </table>
+
+</div>
