@@ -1,4 +1,4 @@
-class CreateFuncinarios < ActiveRecord::Migration[5.1]
+class CreateFuncionarios < ActiveRecord::Migration[5.1]
   def change
     create_table :funcionarios do |t|
       t.string :nome

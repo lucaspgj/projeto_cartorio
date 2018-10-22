@@ -1,12 +1,17 @@
 <%= simple_form_for @funcionario do |f| %>
-  <div class="row">
-    <div class='col-md-6'>
-      <%= f.input :nome, label: 'Digite seu nome', input_html:{ class: "form-control"} %>
-    </div>
-    <div class='col-md-6'>
-     <%= f.input :matricula, label: 'Digite sua matricula', input_html:{ class: "form-control"} %>
-    </div>
 
+
+  <div class="row">
+
+      <div class='col-md-6'>
+        <%= f.input :nome, label: 'Digite seu nome', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :matricula, label: 'Digite sua matricula', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :cargo, label: 'Digite seu cargo', input_html:{ class: "form-control"} %>
+      </div>
   </div>
 
   <div class="row">

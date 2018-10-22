@@ -1,0 +1,89 @@
+<div>
+    <%= link_to 'Novo Imóvel', new_imovel_path, class:'btn btn-primary' %>
+</div>
+<div>
+
+  <table class="table">
+
+      <thead>
+
+
+        <tr>
+          <td>
+            Endereco
+          </td>
+          <td>
+            Iptu
+          </td>
+          <td>
+            Area
+          </td>
+          <td>
+            Matricula
+          </td>
+          <td>
+            Cidade
+          </td>
+          <td>
+            Ato Declaratorio
+          </td>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <% @imovels.each do |imovel| %>
+
+            <td>
+
+              <%= imovel.endereco%>
+
+            </td>
+            <td>
+
+              <%= imovel.iptu%>
+
+            </td>
+            <td>
+
+              <%= imovel.area%>
+
+            </td>
+            <td>
+
+              <%= imovel.matricula%>
+
+            </td>
+            <td>
+
+              <%= imovel.cidade%>
+
+            </td>
+            <td>
+
+              <%= imovel.ato_declaratorio%>
+
+            </td>
+            <td>
+
+              <%= link_to 'Editar', edit_imovel_path(imovel), class:'btn btn-warning' %>
+
+            </td>
+            <td>
+
+              <%= link_to 'Excluir', imovel_path(imovel), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
+
+            </td>
+
+        </tr>
+
+        <% end %>
+
+      </tbody>
+
+
+  </table>
+
+</div>

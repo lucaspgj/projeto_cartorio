@@ -1,0 +1,139 @@
+<div>
+    <%= link_to 'Novo Morador', new_morador_path, class:'btn btn-primary' %>
+</div>
+
+<div>
+
+  <table class="table">
+
+      <thead>
+
+        Lista de Moradores
+        <tr>
+          <td>
+            <div class='col-md-2'>
+            Nome
+           </div>
+          </td>
+
+          <td>
+            <div class='col-md-2'>
+              Cpf
+            </div>
+          </td>
+
+          <td>
+            <div class='col-md-2'>
+            Rg
+            </div>
+          </td>
+          <td>
+            <div class='col-md-2'>
+            Estado Civil
+            </div>
+          </td>
+          <td>
+            <div class='col-md-2'>
+            Profissao
+            </div>
+          </td>
+          <td>
+            <div class='col-md-2'>
+            Nome Conjuge
+            </div>
+          </td>
+          <td>
+            <div class='col-md-2'>
+            Cpf Conjuge
+            </div>
+          </td>
+          <td>
+            <div class='col-md-2'>
+            Profissao Conjuge
+            </div>
+          </td>
+          <td>
+            <div class='col-md-2'>
+            Estado Civil Conjuge
+            </div>
+          </td>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <% @moradors.each do |morador| %>
+
+        <tr>
+            <td>
+
+              <%= morador.nome%>
+
+            </td>
+            <td>
+
+              <%= morador.cpf%>
+
+            </td>
+            <td>
+
+              <%= morador.rg%>
+
+            </td>
+            <td>
+
+              <%= morador.est_civil%>
+
+            </td>
+            <td>
+
+              <%= morador.profissao%>
+
+            </td>
+
+            <td>
+
+              <%= morador.nome_conjuge%>
+
+            </td>
+            <td>
+
+              <%= morador.cpf_conjuge%>
+
+            </td>
+
+            <td>
+
+              <%= morador.profissao_conjuge%>
+
+            </td>
+
+            <td>
+
+              <%= morador.est_civil_conjuge%>
+
+            </td>
+
+            <td>
+
+              <%= link_to 'Editar', edit_morador_path(morador), class:'btn btn-warning' %>
+
+            </td>
+
+            <td>
+
+              <%= link_to 'Excluir', morador_path(morador), method: :delete, data: {  confirm: 'Are you sure?' } %>
+
+            </td>
+
+        </tr>
+
+        <% end %>
+
+      </tbody>
+
+
+  </table>
+
+</div>

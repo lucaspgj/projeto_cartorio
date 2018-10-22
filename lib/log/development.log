@@ -1,0 +1,1856 @@
+Started GET "/" for 127.0.0.1 at 2018-10-16 16:55:36 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (202.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (144.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateImovels (20181016004606)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "imoveis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "iptu" varchar, "area" varchar, "endereco" varchar, "matricula" integer, "cidade" varchar, "ato_declaratorio" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181016004606"]]
+  [1m[35m (95.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMoradors (20181016004652)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "moradores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar, "rg" varchar, "est_civil" varchar, "profissao" varchar, "nome_conjuge" varchar, "cpf_conjuge" varchar, "profissao_conjuge" varchar, "est_civil_conjuge" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181016004652"]]
+  [1m[35m (130.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFuncinarios (20181016004721)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "funcionarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "senha" varchar, "matricula" varchar, "cargo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181016004721"]]
+  [1m[35m (96.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateImovelMoradors (20181016004918)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "imovel_moradores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "id_morador" integer, "id_imovel" integer, "id_funcionario" integer, "processo" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181016004918"]]
+  [1m[35m (138.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-16 19:56:01.298878"], ["updated_at", "2018-10-16 19:56:01.298878"]]
+  [1m[35m (115.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/imovels" for 127.0.0.1 at 2018-10-16 16:56:27 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/imovels"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/funcionario" for 127.0.0.1 at 2018-10-16 16:56:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/funcionario"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-16 16:56:53 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/garrido/.rvm/gems/ruby-2.5.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/garrido/.rvm/gems/ruby-2.5.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (14.3ms)
+Completed 200 OK in 36ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/funcionario" for 127.0.0.1 at 2018-10-16 16:57:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/funcionario"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 16:57:53 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.7ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 48ms (Views: 27.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2018-10-16 16:57:59 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (404.4ms)
+  Rendered funcionarios/new.html.erb within layouts/application (409.7ms)
+Completed 200 OK in 467ms (Views: 423.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 16:58:11 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRS1xmjihaHk54vvYm0tg18XHJSRqaKUZ6cqFpBpfhAowpRjIXA/KGh9fGxdtnYvtGyB+pd+lyBiRUkJBFRTyA==", "funcionario"=>{"nome"=>"guilherme", "matricula"=>"test"}, "commit"=>"Create Funcionario"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "funcionarios" ("nome", "matricula", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "guilherme"], ["matricula", "test"], ["created_at", "2018-10-16 19:58:11.131534"], ["updated_at", "2018-10-16 19:58:11.131534"]]
+  [1m[35m (133.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/funcionarios
+Completed 302 Found in 154ms (ActiveRecord: 138.9ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 16:58:11 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.0ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:00:08 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:00:11 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.8ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:07:05 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.8ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2018-10-16 17:07:36 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (24.6ms)
+  Rendered funcionarios/new.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 17:07:41 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y8soAWPjqzC/oFT15wtC9ggGCOq6BSRpd4pbZmSqrPH6HQmkKnERuTM6o3bY0Bla432VhLzSEd1yaDh58JeBKQ==", "funcionario"=>{"nome"=>"Lucas", "matricula"=>"123"}, "commit"=>"Create Funcionario"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "funcionarios" ("nome", "matricula", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "Lucas"], ["matricula", "123"], ["created_at", "2018-10-16 20:07:41.303115"], ["updated_at", "2018-10-16 20:07:41.303115"]]
+  [1m[35m (223.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/funcionarios
+Completed 302 Found in 248ms (ActiveRecord: 227.5ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:07:41 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.8ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 30ms (Views: 19.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:10:00 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:11:29 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 38ms (Views: 32.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:12:03 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.1ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 34ms (Views: 28.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:12:08 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.8ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:18:36 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (63.4ms)
+Completed 200 OK in 95ms (Views: 77.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2018-10-16 17:18:38 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (30.5ms)
+  Rendered funcionarios/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 74ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 17:19:36 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kF/rD7lwfO+XbZBnxas9oVJcic3aovqurQgN7JT835ahicqq8OLGZhv3Z+T6cGYNuScUo9x1zxqo6m7zAMHyTg==", "funcionario"=>{"nome"=>"Mateus", "matricula"=>"cu de mula", "cargo"=>"viadin"}, "commit"=>"Create Funcionario"}
+Unpermitted parameter: :cargo
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (48.6ms)
+  Rendered funcionarios/new.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 92ms (Views: 65.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 17:19:41 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ss7/VDqNrAZEQCaEUlox6xBTzgEUZsu/oZIZNMVolhWDGN7xcx8Wj8ja0QdtgWpH+yhTbxKx/gukcHorUVW7zQ==", "funcionario"=>{"nome"=>"Mateus", "matricula"=>"cu de mula", "cargo"=>"1"}, "commit"=>"Create Funcionario"}
+Unpermitted parameter: :cargo
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (35.0ms)
+  Rendered funcionarios/new.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 72ms (Views: 54.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 17:19:42 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19L+usIcpj/PgRCRydErQKrBtplmPu8YpfNUhOHZdgnmBN8fi44ctkMb5xL2CnDsQbor92Dp2qygETebdeRb0Q==", "funcionario"=>{"nome"=>"Mateus", "matricula"=>"cu de mula", "cargo"=>""}, "commit"=>"Create Funcionario"}
+Unpermitted parameter: :cargo
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (21.4ms)
+  Rendered funcionarios/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 52ms (Views: 36.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 17:20:48 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19L+usIcpj/PgRCRydErQKrBtplmPu8YpfNUhOHZdgnmBN8fi44ctkMb5xL2CnDsQbor92Dp2qygETebdeRb0Q==", "funcionario"=>{"nome"=>"Mateus", "matricula"=>"cu de mula", "cargo"=>""}, "commit"=>"Create Funcionario"}
+Unpermitted parameter: :cargo
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "funcionarios" ("nome", "matricula", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "Mateus"], ["matricula", "cu de mula"], ["created_at", "2018-10-16 20:20:48.616401"], ["updated_at", "2018-10-16 20:20:48.616401"]]
+  [1m[35m (108.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/funcionarios
+Completed 302 Found in 196ms (ActiveRecord: 117.9ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:20:48 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.8ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 37ms (Views: 28.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2018-10-16 17:20:50 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (28.3ms)
+  Rendered funcionarios/new.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 55ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-16 17:20:56 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"by/JS2w9v7hrx4jqDZZPWulFaTvhImcSY4SApSCW/Ste+ejuJa8FMeddf2kyTRT2Aj70Vef1UqZmZuO6tKvQ8w==", "funcionario"=>{"nome"=>"Lucas", "matricula"=>"test", "cargo"=>"assessor"}, "commit"=>"Create Funcionario"}
+Unpermitted parameter: :cargo
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "funcionarios" ("nome", "matricula", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nome", "Lucas"], ["matricula", "test"], ["created_at", "2018-10-16 20:20:56.209037"], ["updated_at", "2018-10-16 20:20:56.209037"]]
+  [1m[35m (210.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/funcionarios
+Completed 302 Found in 242ms (ActiveRecord: 217.3ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:20:56 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.8ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 28ms (Views: 18.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:22:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveis"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:28:47 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveis"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:28:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveis"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovels" for 127.0.0.1 at 2018-10-16 17:28:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imovels"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovel" for 127.0.0.1 at 2018-10-16 17:29:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imovel"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovel" for 127.0.0.1 at 2018-10-16 17:37:47 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imovel"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovel" for 127.0.0.1 at 2018-10-16 17:40:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imovel"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:41:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveis"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-16 17:41:20 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.1ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 98ms (Views: 75.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:46:01 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveis"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:47:56 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (3.3ms)[0m  [1m[34mSELECT  "imovels".* FROM "imovels" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mImovel Load (3.9ms)[0m  [1m[34mSELECT  "imovels".* FROM "imovels" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered imoveis/index.html.erb within layouts/application (143.2ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 8.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_imovel_path' for #<#<Class:0x00007fe15421ae70>:0x00007fe154218e68>
+Did you mean?  new_imovei_path):
+    1: <div>
+    2:     <%= link_to 'Novo Imóvel', new_imovel_path, class:'btn btn-primary' %>
+    3: </div>
+    4: <div>
+    5: 
+  
+app/views/imoveis/index.html.erb:2:in `_app_views_imoveis_index_html_erb__845161387761775113_70302877932380'
+Started GET "/sdsd" for 127.0.0.1 at 2018-10-16 17:48:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/sdsd"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:50:32 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb__845161387761775113_70303015871320'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 17:51:25 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.4ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb__845161387761775113_70303014427840'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/imovels" for 127.0.0.1 at 2018-10-16 19:20:52 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/imovels"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovei" for 127.0.0.1 at 2018-10-16 19:21:00 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imovei"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-16 19:21:12 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/garrido/.rvm/gems/ruby-2.5.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/garrido/.rvm/gems/ruby-2.5.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (10.4ms)
+Completed 200 OK in 44ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:29:35 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.9ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939651794900'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:32:10 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (21.4ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovel.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254793794080'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:32:59 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939452119600'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:34:01 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939454117920'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:34:19 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovel.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939651256140'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:34:41 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.1ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652698480'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:57:56 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.4ms)[0m  [1m[34mSELECT  "imovels".* FROM "imovels" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mImovel Load (4.0ms)[0m  [1m[34mSELECT  "imovels".* FROM "imovels" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered imoveis/index.html.erb within layouts/application (142.3ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_imovels_path' for #<#<Class:0x00007f383033a7b0>:0x00007f383015a508>
+Did you mean?  new_imovei_path):
+    1: <div>
+    2:     <%= link_to 'Novo Imóvel', new_imovels_path, class:'btn btn-primary' %>
+    3: </div>
+    4: <div>
+    5: 
+  
+app/views/imoveis/index.html.erb:2:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939650811660'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 19:58:21 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovels.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652173180'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:07:03 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 55ms
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovels.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652474760'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:07:53 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.6ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254792500400'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:08:29 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.2ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939651770080'
+Started GET "/imjjjjj" for 127.0.0.1 at 2018-10-16 20:10:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imjjjjj"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovei" for 127.0.0.1 at 2018-10-16 20:18:43 -0300
+  
+ActionController::RoutingError (uninitialized constant ImoveiController):
+  
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imovei" for 127.0.0.1 at 2018-10-16 20:19:08 -0300
+  
+ActionController::RoutingError (uninitialized constant ImoveiController):
+  
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:22:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveis"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:23:02 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.3ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652562800'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:25:40 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.4ms)[0m  [1m[34mSELECT  "imovels".* FROM "imovels" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mImovel Load (2.4ms)[0m  [1m[34mSELECT  "imovels".* FROM "imovels" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered imoveis/index.html.erb within layouts/application (143.5ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_imoveis_path' for #<#<Class:0x00007f38188d4698>:0x00007f38188cea90>
+Did you mean?  new_imovei_path):
+    1: <div>
+    2:     <%= link_to 'Novo Imóvel', new_imoveis_path, class:'btn btn-primary' %>
+    3: </div>
+    4: <div>
+    5: 
+  
+app/views/imoveis/index.html.erb:2:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939453405000'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:26:01 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (4.3ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939453652200'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:26:27 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (17.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovei| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254795273800'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:26:31 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovei| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254796560480'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:27:53 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/garrido/Documentos/Projetos/projeto_cartorio/app/views/imoveis/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/imoveis/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:29:10 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/garrido/Documentos/Projetos/projeto_cartorio/app/views/imoveis/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/imoveis/index.html.erb:61: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:29:23 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254789623540'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:35:02 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 37ms
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652830920'
+Started GET "/imoveiiii" for 127.0.0.1 at 2018-10-16 20:41:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveiiii"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveiiii" for 127.0.0.1 at 2018-10-16 20:41:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveiiii"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveiiii" for 127.0.0.1 at 2018-10-16 20:43:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imoveiiii"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:43:29 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 51ms
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovei.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652564400'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:44:54 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 44ms
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovel.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939652142020'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:48:07 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.3ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939650521240'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:50:31 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovel.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254794404200'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-16 20:51:08 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovel.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_47254788231820'
+Started GET "/imo" for 127.0.0.1 at 2018-10-17 11:01:30 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/imo"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/lmoo" for 127.0.0.1 at 2018-10-17 11:23:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/lmoo"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/moradores" for 127.0.0.1 at 2018-10-17 11:24:58 -0300
+  
+LoadError (Unable to autoload constant MoradoresController, expected /home/garrido/Documentos/Projetos/projeto_cartorio/app/controllers/concerns/moradores_controller.rb to define it):
+  
+activesupport (5.1.6) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.1.6) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.6) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.1.6) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-17 11:28:31 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.0ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 87ms (Views: 72.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/funcionarios/3" for 127.0.0.1 at 2018-10-17 11:28:47 -0300
+Processing by FuncionariosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering funcionarios/show.html.erb within layouts/application
+  Rendered funcionarios/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 118ms (Views: 18.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/funcionarios/3/edit" for 127.0.0.1 at 2018-10-17 11:28:55 -0300
+Processing by FuncionariosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFuncionario Load (0.9ms)[0m  [1m[34mSELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering funcionarios/edit.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (411.3ms)
+  Rendered funcionarios/edit.html.erb within layouts/application (423.8ms)
+Completed 200 OK in 448ms (Views: 435.7ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/funcionarios/3" for 127.0.0.1 at 2018-10-17 11:29:07 -0300
+Processing by FuncionariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qDkungZ6Yd8UtET/WJSxcDLPxykg4QHynBinADelZq1nPXYSpeH7DlR9p32/FZyed74edLTvp7Ca0yO7Ux2+nQ==", "funcionario"=>{"nome"=>"Mateus", "matricula"=>"12345", "cargo"=>"assessor"}, "commit"=>"Update Funcionario", "id"=>"3"}
+  [1m[36mFuncionario Load (0.5ms)[0m  [1m[34mSELECT  "funcionarios".* FROM "funcionarios" WHERE "funcionarios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :cargo
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (56.1ms)[0m  [1m[33mUPDATE "funcionarios" SET "matricula" = ?, "updated_at" = ? WHERE "funcionarios"."id" = ?[0m  [["matricula", "12345"], ["updated_at", "2018-10-17 14:29:07.826325"], ["id", 3]]
+  [1m[35m (161.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/funcionarios
+Completed 302 Found in 263ms (ActiveRecord: 218.8ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-17 11:29:08 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.0ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 46ms (Views: 34.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-17 11:29:45 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (6.4ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 41ms (Views: 29.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-17 11:31:09 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (0.7ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 98ms (Views: 82.6ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/funcionarios/new" for 127.0.0.1 at 2018-10-17 11:31:15 -0300
+Processing by FuncionariosController#new as HTML
+  Rendering funcionarios/new.html.erb within layouts/application
+  Rendered funcionarios/_form.html.erb (37.5ms)
+  Rendered funcionarios/new.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 72ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/funcionarios" for 127.0.0.1 at 2018-10-17 11:31:20 -0300
+Processing by FuncionariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e6K+s7RvARm89tMN5p+SUGzqny/Tj9GP5xPGElDwi2FZGsBIGc4spalmRxgYoorurReDQW9goowrTn2kTHoJgQ==", "funcionario"=>{"nome"=>"Lucas", "matricula"=>"test", "cargo"=>"assessor"}, "commit"=>"Create Funcionario"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "funcionarios" ("nome", "matricula", "cargo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Lucas"], ["matricula", "test"], ["cargo", "assessor"], ["created_at", "2018-10-17 14:31:20.861433"], ["updated_at", "2018-10-17 14:31:20.861433"]]
+  [1m[35m (130.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/funcionarios
+Completed 302 Found in 175ms (ActiveRecord: 132.3ms)
+
+
+Started GET "/funcionarios" for 127.0.0.1 at 2018-10-17 11:31:21 -0300
+Processing by FuncionariosController#index as HTML
+  Rendering funcionarios/index.html.erb within layouts/application
+  [1m[36mFuncionario Load (1.1ms)[0m  [1m[34mSELECT "funcionarios".* FROM "funcionarios"[0m
+  Rendered funcionarios/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 44ms (Views: 38.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/moradores" for 127.0.0.1 at 2018-10-17 11:31:53 -0300
+  
+LoadError (Unable to autoload constant MoradoresController, expected /home/garrido/Documentos/Projetos/projeto_cartorio/app/controllers/concerns/moradores_controller.rb to define it):
+  
+activesupport (5.1.6) lib/active_support/dependencies.rb:512:in `load_missing_constant'
+activesupport (5.1.6) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.6) lib/active_support/dependencies.rb:583:in `get'
+activesupport (5.1.6) lib/active_support/dependencies.rb:614:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-17 11:32:00 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  Rendered imoveis/index.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imovel.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939453313420'
+Started GET "/imoveis" for 127.0.0.1 at 2018-10-17 11:34:49 -0300
+Processing by ImoveisController#index as HTML
+  Rendering imoveis/index.html.erb within layouts/application
+  [1m[36mImovel Load (2.0ms)[0m  [1m[34mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imoveis/index.html.erb within layouts/application (17.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: imovels: SELECT "imovels".* FROM "imovels"):
+    13: 
+    14:       <tbody>
+    15: 
+    16:         <% @imoveis.each do |imovel| %>
+    17: 
+    18:         <tr>
+    19:           <td>
+  
+app/views/imoveis/index.html.erb:16:in `_app_views_imoveis_index_html_erb___4285168259074034997_69939452294980'

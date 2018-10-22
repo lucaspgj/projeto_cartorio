@@ -1,6 +1,6 @@
 class CreateMoradors < ActiveRecord::Migration[5.1]
   def change
-    create_table :moradores do |t|
+    create_table :moradors do |t|
       t.string  :nome
       t.string  :cpf
       t.string  :rg
@@ -10,7 +10,6 @@ class CreateMoradors < ActiveRecord::Migration[5.1]
       t.string  :cpf_conjuge
       t.string  :profissao_conjuge
       t.string  :est_civil_conjuge
-
 
       t.timestamps
     end

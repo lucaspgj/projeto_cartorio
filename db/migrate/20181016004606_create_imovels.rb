@@ -1,6 +1,6 @@
 class CreateImovels < ActiveRecord::Migration[5.1]
   def change
-    create_table :imoveis do |t|
+    create_table :imovels do |t|
       t.string :iptu
       t.string :area
       t.string :endereco

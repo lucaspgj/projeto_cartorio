@@ -21,7 +21,16 @@ ActiveRecord::Schema.define(version: 20181016004918) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "imoveis", force: :cascade do |t|
+  create_table "imovel_moradores", force: :cascade do |t|
+    t.integer "id_morador"
+    t.integer "id_imovel"
+    t.integer "id_funcionario"
+    t.integer "processo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "imovels", force: :cascade do |t|
     t.string "iptu"
     t.string "area"
     t.string "endereco"
@@ -32,16 +41,7 @@ ActiveRecord::Schema.define(version: 20181016004918) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "imovel_moradores", force: :cascade do |t|
-    t.integer "id_morador"
-    t.integer "id_imovel"
-    t.integer "id_funcionario"
-    t.integer "processo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "moradores", force: :cascade do |t|
+  create_table "moradors", force: :cascade do |t|
     t.string "nome"
     t.string "cpf"
     t.string "rg"

@@ -1,0 +1,57 @@
+<%= simple_form_for @morador do |f| %>
+
+
+  <div class="row">
+
+      <div class='col-md-12'>
+        <h4>Titular </h4>
+      </div>
+
+      <div class='col-md-6'>
+        <%= f.input :nome, label: 'Nome: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :cpf, label: 'Cpf: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :rg, label: 'RG: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :est_civil, label: 'Estado Civil: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :profissao, label: 'Profissao: ', input_html:{ class: "form-control"} %>
+      </div>
+
+      <div class='col-md-12'>
+        <h4> Conjuge </h4>
+      </div>
+
+      <div class='col-md-6'>
+
+       <%= f.input :nome_conjuge, label: 'Nome: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :cpf_conjuge, label: 'Cpf: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :rg, label: 'RG: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :cpf_conjuge, label: 'Profissao: ', input_html:{ class: "form-control"} %>
+      </div>
+      <div class='col-md-6'>
+       <%= f.input :cpf_conjuge, label: 'Estado Cilvil: ', input_html:{ class: "form-control"} %>
+      </div>
+
+  </div>
+
+  <div class="row">
+    <div class='col-md-12'>
+      <br>
+     <%= f.button :submit, class: 'btn btn-success' %>
+   </div>
+ </div>
+
+
+<% end -%>

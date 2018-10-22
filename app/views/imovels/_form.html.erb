@@ -1,0 +1,36 @@
+<%= simple_form_for @imovel do |f| %>
+
+
+  <div class="row">
+
+    <tr>
+        <div class='col-md-6'>
+          <%= f.input :endereco, label: 'Endereço', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :iptu, label: 'Iptu', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :area, label: 'Area', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :matricula, label: 'Matricula', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :cidade, label: 'Cidade', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :ato_declaratorio, label: 'Ato Declaratorio', input_html:{ class: "form-control"} %>
+        </div>
+    </tr>
+  </div>
+
+  <div class="row">
+    <div class='col-md-12'>
+      <br>
+     <%= f.button :submit, class: 'btn btn-success' %>
+   </div>
+ </div>
+
+
+<% end -%>
