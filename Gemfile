@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'mini_racer'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,23 @@
+<%= simple_form_for [@imovel,@imovel_morador] do |f| %>
+
+
+  <div class="row">
+
+        <div class='col-md-6'>
+          <%= f.input :cpf, label: 'CPF', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :processo, label: 'Processo', input_html:{ class: "form-control"} %>
+        </div>
+
+  </div>
+
+  <div class="row">
+    <div class='col-md-12'>
+      <br>
+     <%= f.button :submit, class: 'btn btn-success' %>
+   </div>
+ </div>
+
+
+<% end -%>

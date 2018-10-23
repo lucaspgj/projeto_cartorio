@@ -1,0 +1,23 @@
+<%= simple_form_for @autenticar do |f| %>
+
+
+  <div class="row">
+
+        <div class='col-md-6'>
+          <%= f.input :matricula, label: 'Matricula', input_html:{ class: "form-control"} %>
+        </div>
+        <div class='col-md-6'>
+         <%= f.input :password, label: 'Senha', input_html:{ class: "form-control"} %>
+        </div>
+
+  </div>
+
+  <div class="row">
+    <div class='col-md-12'>
+      <br>
+     <%= f.button :submit, class: 'btn btn-success' %>
+   </div>
+ </div>
+
+
+<% end -%>
