@@ -45,7 +45,7 @@ class FuncionariosController < ApplicationController
   private
 
   def set_params
-    params.require(:funcionario).permit(:nome, :matricula, :cargo)
+    params.require(:funcionario).permit(:nome, :matricula, :cargo, :senha)
   end
 
   def set_funcionario

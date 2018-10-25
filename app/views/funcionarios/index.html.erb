@@ -19,6 +19,9 @@
           <td>
             Cargo
           </td>
+          <td>
+            Senha
+          </td>
         </tr>
 
       </thead>
@@ -44,6 +47,11 @@
               <%= funcionario.cargo%>
 
             </td>
+            <td>
+
+              <%= funcionario.senha%>
+
+            </td>
 
             <td>
 
@@ -52,7 +60,7 @@
             </td>
             <td>
 
-              <%= link_to 'teste', funcionario, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
+              <%= link_to 'Excluir', funcionario, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
 
             </td>
         </tr>
