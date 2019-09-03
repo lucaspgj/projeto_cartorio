@@ -1,14 +1,13 @@
-require_dependency 'application_controller'
-
-class SessionsController < ApplicationController
+class SessionsController < ActionController::Base
   layout 'login'
   def new
     @autenticar = Session.new
   end
 
   def create
-    @autenticar = Session.new(set_params)
-    if @autenticar.valid?
+    @autentica = Session.new(set_params)
+    if @autentica.valid?
+      session[:usuario_id] = @autentica.id
       redirect_to funcionarios_path
     else
       render action: :new

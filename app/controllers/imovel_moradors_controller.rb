@@ -5,7 +5,7 @@ class ImovelMoradorsController < ApplicationController
   before_action :set_morador, only: %i[edit update destroy show]
 
   def index
-    @imovel_morador = ::ImovelMorador.all
+    @imovel_morador = @imovel.imovel_moradors.all
   end
 
   def new
@@ -14,6 +14,8 @@ class ImovelMoradorsController < ApplicationController
 
   def create
     @imovel_morador = @imovel.imovel_moradors.new(set_params)
+    @imovel_morador.funcionario_id = session[:usuario_id]
+
     if @imovel_morador.save
       redirect_to moradors_path
     else

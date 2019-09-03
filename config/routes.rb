@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :funcionarios
-  resources :imovels
+  resources :imovels do
+      resources :imovel_moradors
+  end
   resources :moradors
   resources :sessions, only: %i[new create]
+
 end

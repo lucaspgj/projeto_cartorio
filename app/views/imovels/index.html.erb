@@ -1,64 +1,59 @@
-<div>
+<div class="row">
+  <div class="col-md-12">
     <%= link_to 'Novo Imóvel', new_imovel_path, class:'btn btn-primary' %>
+  </div>
 </div>
-<div>
-  <table class="table">
-          <thead>
-              <tr>
-                  <td>
-                    Endereco
-                  </td>
-                  <td>
-                    Iptu
-                  </td>
-                  <td>
-                    Area
-                  </td>
-                  <td>
-                    Matricula
-                  </td>
-                  <td>
-                    Cidade
-                  </td>
-                  <td>
-                    Ato Declaratorio
-                  </td>
-              </tr>
-          </thead>
-    <tbody>
-        <% @imovels.each do |imovel| %>
-            <td>
-              <%= imovel.endereco%>
-            </td>
-            <td>
-              <%= imovel.iptu%>
-            </td>
-            <td>
-              <%= imovel.area%>
-            </td>
-            <td>
-              <%= imovel.matricula%>
-            </td>
-            <td>
-              <%= imovel.cidade%>
-            </td>
-            <td>
-              <%= imovel.ato_declaratorio%>
-            </td>
-            <td>
-              <%= link_to 'Editar', edit_imovel_path(imovel), class:'btn btn-warning' %>
-            </td>
-            <td>
-              <%= link_to 'Excluir', imovel_path(imovel), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
-            </td>
-
+<br />
+<br />
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>
+            Cidade
+          </td>
+          <td>
+            Endereco
+          </td>
+          <td>
+            Morador
+          </td>
         </tr>
+      </thead>
+      <tbody>
+            <% @imovels.each do |imovel| %>
+               <td class="col-md-3">
+                 <%= imovel.cidade%>
+               </td>
+                <td class="col-md-3">
+                  <%= imovel.endereco%>
+                </td>
+                <td class="col-md-3">
+                  <%= imovel.imovel_moradors.last.morador.nome rescue "Imovel vago" %>
+                </td>
 
-        <% end %>
+                <td class="col-md-1">
+                  <%= link_to 'Visualizar', imovel_path(imovel), class:'btn btn-info btn-sm' %>
+                </td>
+                <td class="col-md-1">
+                  <%= link_to 'Editar', edit_imovel_path(imovel), class:'btn btn-warning btn-sm' %>
+                </td>
+                <td class="col-md-1">
+                  <%= link_to 'Excluir', imovel_path(imovel), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm' %>
+                </td>
+                <td class="col-md-1">
+                  <%= link_to 'Assentar', new_imovel_imovel_morador_path(imovel), class:'btn btn-success btn-sm' %>
+                </td>
 
-      </tbody>
+
+            </tr>
+
+            <% end %>
+
+          </tbody>
 
 
-  </table>
-
+      </table>
+  </div>
 </div>

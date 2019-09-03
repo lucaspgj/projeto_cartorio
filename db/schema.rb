@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20181016004918) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "imovel_moradores", force: :cascade do |t|
-    t.integer "id_morador"
-    t.integer "id_imovel"
-    t.integer "id_funcionario"
+  create_table "imovel_moradors", force: :cascade do |t|
+    t.integer "morador_id"
+    t.integer "imovel_id"
+    t.integer "funcionario_id"
     t.integer "processo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,58 @@
+<div>
+  <table class="table">
+          <thead>
+              <tr>
+                  <td>
+                    Endereco
+                  </td>
+                  <td>
+                    Iptu
+                  </td>
+                  <td>
+                    Area
+                  </td>
+                  <td>
+                    Matricula
+                  </td>
+                  <td>
+                    Cidade
+                  </td>
+                  <td>
+                    Ato Declaratorio
+                  </td>
+                  <td>
+                    Morador Vinculado
+                  </td>
+              </tr>
+          </thead>
+    <tbody>
+            <td>
+              <%= @imovel.endereco%>
+            </td>
+            <td>
+              <%= @imovel.iptu%>
+            </td>
+            <td>
+              <%= @imovel.area%>
+            </td>
+            <td>
+              <%= @imovel.matricula%>
+            </td>
+            <td>
+              <%= @imovel.cidade%>
+            </td>
+            <td>
+              <%= @imovel.ato_declaratorio%>
+            </td>
+            <td>
+              <%= @imovel.imovel_moradors.last.morador.nome %>
+            </td>
+
+        </tr>
+
+      </tbody>
+
+
+  </table>
+
+</div>
