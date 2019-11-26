@@ -30,6 +30,7 @@ class ImovelMoradorsController < ApplicationController
   end
 
   def show
+    render layout: 'layouts/document'
   end
 
   private
@@ -43,6 +44,6 @@ class ImovelMoradorsController < ApplicationController
   end
 
   def set_morador
-    @imovel_morador = Morador.find(params[:id])
+    @imovel_morador = ImovelMorador.find(params[:id])
   end
 end

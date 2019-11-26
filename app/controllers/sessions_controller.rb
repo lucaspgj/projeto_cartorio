@@ -5,9 +5,9 @@ class SessionsController < ActionController::Base
   end
 
   def create
-    @autentica = Session.new(set_params)
-    if @autentica.valid?
-      session[:usuario_id] = @autentica.id
+    @autenticar = Session.new(set_params)
+    if @autenticar.valid?
+      session[:usuario_id] = @autenticar.id
       redirect_to funcionarios_path
     else
       render action: :new

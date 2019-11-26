@@ -1,4 +1,9 @@
 <div>
+<%= link_to 'Voltar', imovels_path, class:'btn btn-dark' %>
+</div>
+<br>
+<br>
+<div>
   <table class="table">
           <thead>
               <tr>
@@ -45,7 +50,7 @@
               <%= @imovel.ato_declaratorio%>
             </td>
             <td>
-              <%= @imovel.imovel_moradors.last.morador.nome %>
+              <%= @imovel.imovel_moradors.last.morador.nome rescue "Imóvel vago"%>
             </td>
 
         </tr>

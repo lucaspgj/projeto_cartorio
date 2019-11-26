@@ -1,59 +1,61 @@
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to 'Novo Imóvel', new_imovel_path, class:'btn btn-primary' %>
-  </div>
-</div>
-<br />
-<br />
-<div class="row">
-  <div class="col-md-12">
-    <table class="table">
-      <thead>
-        <tr>
-          <td>
-            Cidade
-          </td>
-          <td>
-            Endereco
-          </td>
-          <td>
-            Morador
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-            <% @imovels.each do |imovel| %>
-               <td class="col-md-3">
-                 <%= imovel.cidade%>
-               </td>
-                <td class="col-md-3">
-                  <%= imovel.endereco%>
-                </td>
-                <td class="col-md-3">
-                  <%= imovel.imovel_moradors.last.morador.nome rescue "Imovel vago" %>
-                </td>
-
-                <td class="col-md-1">
-                  <%= link_to 'Visualizar', imovel_path(imovel), class:'btn btn-info btn-sm' %>
-                </td>
-                <td class="col-md-1">
-                  <%= link_to 'Editar', edit_imovel_path(imovel), class:'btn btn-warning btn-sm' %>
-                </td>
-                <td class="col-md-1">
-                  <%= link_to 'Excluir', imovel_path(imovel), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm' %>
-                </td>
-                <td class="col-md-1">
-                  <%= link_to 'Assentar', new_imovel_imovel_morador_path(imovel), class:'btn btn-success btn-sm' %>
-                </td>
-
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to 'Novo Imóvel', new_imovel_path, class:'btn btn-primary' %>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td>
+                Cidade
+              </td>
+              <td>
+                Endereco
+              </td>
+              <td>
+                Morador
+              </td>
+              <td></td>
 
             </tr>
+          </thead>
+          <tbody>
+                <% @imovels.each do |imovel| %>
+                   <td scope="col">
+                     <%= imovel.cidade%>
+                   </td>
+                    <td scope="col">
+                      <%= imovel.endereco%>
+                    </td>
+                    <td scope="col">
+                      <%= imovel.imovel_moradors.last.morador.nome rescue "Imovel vago" %>
+                    </td>
+                    <td scope="col">
+                      <div class="btn-group" role="group">
+                          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opções
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <%= link_to 'Escritura', imovel_imovel_morador_path(imovel, imovel.imovel_moradors.last.id), class:'dropdown-item' if imovel.imovel_moradors.present? %>
+                            <%= link_to 'Visualizar', imovel_path(imovel), class:'dropdown-item' %>
+                            <%= link_to 'Editar', edit_imovel_path(imovel), class:'dropdown-item' %>
+                            <%= link_to 'Excluir', imovel_path(imovel), method: :delete, data: { confirm: 'Are you sure?' }, class:'dropdown-item' %>
+                            <%= link_to 'Assentar', new_imovel_imovel_morador_path(imovel), class:'dropdown-item' %>
+                          </div>
+                        </div>
 
-            <% end %>
+                    </td>
+                </tr>
 
-          </tbody>
+                <% end %>
+
+              </tbody>
 
 
-      </table>
-  </div>
-</div>
+          </table>
+      </div>
+    </div>
